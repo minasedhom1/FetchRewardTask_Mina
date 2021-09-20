@@ -66,15 +66,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Here, I used Tree Map to group the items by their list ID while keep them ordered by list ID
-    //@RequiresApi(api = Build.VERSION_CODES.N)
+   //@RequiresApi(api = Build.VERSION_CODES.N)
     private Map<Integer, List<Item> > groupAndFilterItems (List<Item> apiList) {
         // (Sort by List ID) I used TreeMap because its already sorted by key
         // Another solution using Comparator interface included bellow (Commented)
         Map<Integer, List<Item> > itemsMap = new TreeMap<>();
+        List <Item> itemsList;
         final long startTime = System.currentTimeMillis();
         for (Item item : apiList) {
             if (item.getName() != null && !item.getName().equals("")) {
-                List <Item> itemsList = itemsMap.get(item.getList_id());
+                // filling items Tree map with filtered data
+                itemsList = itemsMap.get(item.getList_id());
                 if(itemsList == null) {
                     itemsList = new ArrayList<>();
                     itemsList.add(item);
@@ -83,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
                     // add if item is not already in list
                     if(!itemsList.contains(item)) itemsList.add(item);
                 }
+            // This computeIfAbsent (Java 8) works perfectly with what I want
+                // but requires minimum android N (24) build version
             //itemsMap.computeIfAbsent(item.getList_id(), k -> new ArrayList<>()).add(item);
             }
         }
