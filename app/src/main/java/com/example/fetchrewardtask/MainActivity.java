@@ -51,7 +51,9 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, "Something went wrong! Please try again later",
                             Toast.LENGTH_SHORT).show();
-                    Log.d("error message", response.errorBody().toString());
+                    if (response.errorBody() != null) {
+                        Log.d("error message", response.errorBody().toString());
+                    }
                     progressBar.setVisibility(View.GONE);
                 }
             }
@@ -93,12 +95,7 @@ public class MainActivity extends AppCompatActivity {
         // Sort by name - I used the item id for more accurate results
         // comparing integers instead of comparing strings
        for (Map.Entry<Integer, List<Item>> set : itemsMap.entrySet()) {
-             Collections.sort(set.getValue(), new Comparator<Item>() {
-                  @Override
-                  public int compare(Item t1, Item t2) {
-                      return Integer.compare(t1.getId(),t2.getId());
-                  }
-              });
+             Collections.sort(set.getValue(), (t1, t2) -> Integer.compare(t1.getId(),t2.getId()));
         }
         final long endTime = System.currentTimeMillis();
         System.out.println("Total execution time: " + (endTime - startTime));
