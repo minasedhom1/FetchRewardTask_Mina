@@ -1,6 +1,6 @@
 # FetchRewardTask_Mina!
 
-
+![242220881_453254889256003_3284152970713244090_n](https://user-images.githubusercontent.com/22953976/134126116-772c54e7-aba0-42ab-ad73-f2ef8488bc8b.gif)
 
 The challenges were to sort the data with two different attributes (List ID then name) & display it to the user grouped by the List ID
 
