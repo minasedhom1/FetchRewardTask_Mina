@@ -1,4 +1,8 @@
-# FetchRewardTask_Mina
+# FetchRewardTask_Mina!
+
+
+[Uploading 242220881_453254889256003_3284152970713244090_n.gif…]()
+
 
 The challenges were to sort the data with two different attributes (List ID then name) & display it to the user grouped by the List ID
 
@@ -15,6 +19,6 @@ What I did:
 
 5- I used the Exbandable List to display the items in groups.
 
-6- I provided another method named groupAndFilterItems2() (commented below) to filter and sort (by list id then by name) the data in one list instead of a TreeMap.
+6- I provided another metho named groupAndFilterItems2() (commented below groupAndFilterItems() ) to filter and sort (by list id then by name) the data in one list instead of a TreeMap.
 
 
