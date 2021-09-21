@@ -1,8 +1,6 @@
 # FetchRewardTask_Mina!
 
 
-[Uploading 242220881_453254889256003_3284152970713244090_n.gif…]()
-
 
 The challenges were to sort the data with two different attributes (List ID then name) & display it to the user grouped by the List ID
 
